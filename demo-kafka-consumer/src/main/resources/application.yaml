@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: "localhost:9094"
+      bindings:
+        my-consumer-in-0:
+          destination: "my.topic"
+          group: "${spring.application.name}"
+    function:
+      definition: "my-consumer"

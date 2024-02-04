@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: my-kafka-kafka-bootstrap:9092
+          auto-create-topics: true
+          configuration:
+            auto.offset.reset: latest
+      bindings:
+        greetings-in:
+          destination: greetings-sample
+          group: greetings-in-group
+          contentType: application/json
+        greetings-out:
+          destination: greetings-sample
+          contentType: application/json
